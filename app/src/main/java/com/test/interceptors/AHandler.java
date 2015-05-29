@@ -7,7 +7,13 @@ import com.test.Service;
  * Created by yuanwenfei on 2015/5/28.
  */
 public class AHandler {
-    public static void Commit(Request request, ACallBack callBack){
+    private  Request request;
+    public AHandler(){};
+    public AHandler(Request request){
+        this.request = request;
+    }
+    public void commit(ACallBack callBack){
         Service.start(request, callBack);
     }
+
 }

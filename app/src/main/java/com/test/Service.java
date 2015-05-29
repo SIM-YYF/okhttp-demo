@@ -13,7 +13,6 @@ import java.io.IOException;
 public class Service {
 
     public static void start(Request request, final ACallBack callBack){
-        //异步请求
         HttpUtil.getInstance().enqueue(request, new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
@@ -22,9 +21,9 @@ public class Service {
             }
             @Override
             public void onResponse(Response response) throws IOException {
-                if(!response.isSuccessful()){//失败
+                if(!response.isSuccessful()){
                     callBack.onFailure(response);
-                }else{//成功
+                }else{
                     callBack.onSuccess(response);
                 }
 

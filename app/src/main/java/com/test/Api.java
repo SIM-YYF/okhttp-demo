@@ -27,9 +27,6 @@ public class Api {
     private Api() {
     }
 
-    /**
-     * 获得用户信息
-     */
     public AHandler getUserInfo(String username){
 
         //get
@@ -63,7 +60,7 @@ public class Api {
         //put
         RequestBody putBody = new FormEncodingBuilder()
                 .add("search", "Jurassic Park")
-                .addEncoded("s", "中文")
+                .addEncoded("s", "锟斤拷锟斤拷")
                 .build();
         Request  request3 = new Request.Builder()
                 .addHeader("key", "value")
@@ -92,7 +89,7 @@ public class Api {
                 .delete(deleteBody)
                 .build();
 
-        return new AHandler();
+        return new AHandler(request);
 
     }
 
