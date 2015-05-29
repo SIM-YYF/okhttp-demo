@@ -135,15 +135,16 @@ public class MainActivity extends ActionBarActivity {
 //                textView.setText(s);
                 return true;
             }
-        }).startWith(false) //Before we receive data our request is not complete
-                .subscribe(new Action1<Boolean>() {
+        })
+        .startWith(false) //Before we receive data our request is not complete
+        .subscribe(new Action1<Boolean>() {
 
-                    //We update the UI based on the state of the request
-                    @Override
-                    public void call(Boolean completed) {
+            //We update the UI based on the state of the request
+            @Override
+            public void call(Boolean completed) {
 //                        setRequestInProgress(completed);
-                    }
-                });
+            }
+        });
 
 
 
