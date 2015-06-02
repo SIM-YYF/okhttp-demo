@@ -56,12 +56,12 @@ public class HttpUtil {
         client.networkInterceptors().add(new LogSettingInterceptor());
 
         /**
-         * ÉèÖÃÄÚ´æ»º´æºÍÎÄ¼ş»º´æ
+         * è®¾ç½®å†…å­˜ç¼“å­˜å’Œæ–‡ä»¶ç¼“å­˜
          */
         client.setCache(new Cache(new File("cacheDirectory"), 10 * 1024 * 1024));
 
         /**
-         * ÉèÖÃÈÏÖ¤
+         * è®¾ç½®è®¤è¯
          */
         client.setAuthenticator(new Authenticator() {
             @Override
@@ -83,7 +83,7 @@ public class HttpUtil {
         return client;
     }
     /**
-     * ¸Ã²»»á¿ªÆôÒì²½Ïß³Ì¡£
+     * è¯¥ä¸ä¼šå¼€å¯å¼‚æ­¥çº¿ç¨‹ã€‚
      * @param request
      * @return
      * @throws IOException
@@ -92,7 +92,7 @@ public class HttpUtil {
         return client.newCall(request).execute();
     }
     /**
-     * ¿ªÆôÒì²½Ïß³Ì·ÃÎÊÍøÂç
+     * å¼€å¯å¼‚æ­¥çº¿ç¨‹è®¿é—®ç½‘ç»œ
      * @param request
      * @param responseCallback
      */

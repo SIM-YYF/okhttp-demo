@@ -11,6 +11,7 @@ import com.test.interceptors.AHandler;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okio.BufferedSink;
 
@@ -33,7 +34,11 @@ public class Api {
         Request  request = new Request.Builder()
                 .addHeader("key", "value")
                 .addHeader("key1", "value1")
-                .cacheControl(CacheControl.FORCE_CACHE)
+//                .cacheControl(CacheControl.FORCE_CACHE)//设置该请求使用缓存（第一种方式(默认)）
+                .cacheControl(new CacheControl.Builder()//设置请求使用缓存(第二种方式（自定义）)
+                        .onlyIfCached()
+                        .maxStale(1000, TimeUnit.SECONDS)
+                        .build())
                 .url("")
                 .get()
                 .tag("tag1")
