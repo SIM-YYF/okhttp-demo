@@ -111,6 +111,7 @@ public class MainActivity extends ActionBarActivity {
                 final String fakeJson = "{\"result\": 42}";
                 subscriber.onNext(fakeJson);
                 subscriber.onCompleted();
+                subscriber.onError(new Throwable());
             }
         })
         .subscribeOn(Schedulers.io())
@@ -122,6 +123,7 @@ public class MainActivity extends ActionBarActivity {
                     return String.valueOf(jsonObject.getInt("result"));
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
+
                 }
             }
         })
@@ -143,6 +145,11 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void call(Boolean completed) {
 //                        setRequestInProgress(completed);
+            }
+        }, new Action1<Throwable>() {
+            @Override
+            public void call(Throwable throwable) {
+
             }
         });
 
