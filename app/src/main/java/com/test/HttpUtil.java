@@ -60,6 +60,7 @@ public class HttpUtil {
          */
         client.setCache(new Cache(new File("cacheDirectory"), 10 * 1024 * 1024));
 
+
         /**
          * 设置认证
          */
@@ -89,6 +90,7 @@ public class HttpUtil {
      * @throws IOException
      */
     public  Response execute(Request request) throws IOException{
+
         return client.newCall(request).execute();
     }
     /**
