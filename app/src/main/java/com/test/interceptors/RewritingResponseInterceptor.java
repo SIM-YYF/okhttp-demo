@@ -6,13 +6,9 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 
 /**
- * 进行响应信息进行拦截操作
+ * 杩涜鍝嶅簲淇℃伅杩涜鎷︽埅鎿嶄綔
  * Created by yuanwenfei on 2015/5/28.
  *
-
-
-
-
  */
 public class RewritingResponseInterceptor implements Interceptor {
     @Override
