@@ -50,9 +50,10 @@ public class UserApi {
                             while ((r = inputStream.read(buf)) != -1) {
                                 stringWriter.write(new String(buf, 0, r));
                             }
-                            JSONObject jsonObject = new JSONObject(stringWriter.toString());
+                            JSONObject jsonObject = null;
+                            jsonObject = new JSONObject(stringWriter.toString());
                             return String.valueOf(jsonObject.getString("captcha_id"));
-                        } catch (Exception e) {
+                        } catch (Throwable e) {
                             throw new RuntimeException(e);
                         }
                     }
